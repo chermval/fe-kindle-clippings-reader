@@ -11,6 +11,8 @@ class FileUpload extends React.Component {
     handleSubmit(event){
         event.preventDefault();
         alert(`Selected file - ${this.fileInput.current.files[0].name}`);
+        console.log(`${this.fileInput.current.files[0]}`);
+
     }
 
     render(){

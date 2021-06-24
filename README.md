@@ -12,5 +12,5 @@ Proyecto que permite leer los archivos `My Clippings.txt` de Kindle donde se gua
 1. clonar o descargar repositorio https://github.com/chermval/kindleClippingsReader.git
 2. `cd kindle-clippings-reader`
 3. `npm start`
-4. acceder a la url: http://localhost:3000/s
+4. acceder a la url: http://localhost:3000/
 
