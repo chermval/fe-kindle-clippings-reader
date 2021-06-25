@@ -1,5 +1,6 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {uploadClippingFile,  getClippingFiles} from "../services/FileUploadService"
+
 
 class FileUpload extends React.Component {
     constructor(prop){
@@ -10,8 +11,10 @@ class FileUpload extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
-        alert(`Selected file - ${this.fileInput.current.files[0].name}`);
-        console.log(`${this.fileInput.current.files[0]}`);
+        uploadClippingFile(this.fileInput.current.files[0]).then((response) => {
+            console.log(response.data);
+          });
+        console.log(`${this.fileInput.current.files[0].name}`);
 
     }
 
@@ -19,11 +22,11 @@ class FileUpload extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label className="form-label">
-                    Selecciona tu archivo My Clippings
+                    Upload My Clippings file
                 </label>
                 <input type="file" className="form-control-file" ref={this.fileInput} />
                 <br/>
-                <button type="submit" className="btn btn-primary">Cargar</button>
+                <button type="submit" className="btn btn-primary">Upload</button>
             </form>
         );
     }
